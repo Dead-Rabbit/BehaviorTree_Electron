@@ -5,7 +5,7 @@
 const {app, BrowserWindow, nativeImage } = require('electron')
 const path = require('path')
 // const url = require('url');
- 
+const electronReload = require('electron-reloader');
  
 function createWindow () {
     // Create the browser window.
@@ -40,20 +40,21 @@ function createWindow () {
     mainWindow.on('ready-to-show', () => {
         mainWindow.show();
         mainWindow.focus();
-        
-        mainWindow.webContents.openDevTools()
     });
  
     // 当窗口关闭时发出。在你收到这个事件后，你应该删除对窗口的引用，并避免再使用它。
     mainWindow.on('closed', () => {
         // mainWindow = null;
     });
+
+    Console.log(__dirname);
+    // electronReload(__dirname);
     
-    // 在启动的时候打开DevTools
+    // // 在启动的时候打开DevTools
     // mainWindow.webContents.openDevTools()
 }
  
-app.allowRendererProcessReuse =true;
+app.allowRendererProcessReuse = true;
  
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
@@ -75,6 +76,6 @@ app.on('activate', function () {
     // dock icon is clicked and there are no other windows open.
     if (BrowserWindow.getAllWindows().length === 0) createWindow()
 })
- 
+
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
