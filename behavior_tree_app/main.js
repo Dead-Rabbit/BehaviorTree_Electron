@@ -22,7 +22,6 @@ function createWindow () {
         }
     })
  
- 
     // 加载应用 --打包react应用后，__dirname为当前文件路径
     // mainWindow.loadURL(url.format({
     //   pathname: path.join(__dirname, './build/index.html'),
@@ -30,7 +29,6 @@ function createWindow () {
     //   slashes: true
     // }));
  
-    
     // 因为我们是加载的react生成的页面，并不是静态页面
     // 所以loadFile换成loadURL。
     // 加载应用 --开发阶段  需要运行 yarn start
@@ -46,9 +44,6 @@ function createWindow () {
     mainWindow.on('closed', () => {
         // mainWindow = null;
     });
-
-    Console.log(__dirname);
-    // electronReload(__dirname);
     
     // // 在启动的时候打开DevTools
     // mainWindow.webContents.openDevTools()
