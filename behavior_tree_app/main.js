@@ -45,8 +45,8 @@ function createWindow () {
         // mainWindow = null;
     });
     
-    // 在启动的时候打开DevTools
-    mainWindow.webContents.openDevTools()
+    // // 在启动的时候打开DevTools
+    // mainWindow.webContents.openDevTools()
 }
  
 app.allowRendererProcessReuse = true;
